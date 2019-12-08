@@ -1,0 +1,21 @@
+version: '2'
+services:
+ hdh_rails: 
+  image: hdh:latest
+  restart: always
+  ports:
+    - 3000:3000
+  depends_on: 
+   - hdh_mariadb
+  volumes: 
+   - /home/jeremy/projects/JSW/hdh/rails:/app/hdh
+  environment:
+   - RAILS_ENV=development
+
+ hdh_mariadb:
+  image: mariadb
+  restart: always
+  environment:
+   MYSQL_ROOT_PASSWORD: hundred
+  volumes:
+    - /home/jeremy/projects/JSW/hdh/mysql_data:/var/lib/mysql
