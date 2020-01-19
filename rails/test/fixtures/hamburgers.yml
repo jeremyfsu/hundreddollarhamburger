@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  airport_id: MyString
+  name: MyString
+  notes: MyText
+  website: MyString
+
+two:
+  airport_id: MyString
+  name: MyString
+  notes: MyText
+  website: MyString

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Airport:</strong>
+  <%= @hamburger.airport_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hamburger.name %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @hamburger.notes %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @hamburger.website %>
+</p>
+
+<%= link_to 'Edit', edit_hamburger_path(@hamburger) %> |
+<%= link_to 'Back', hamburgers_path %>

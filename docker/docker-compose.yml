@@ -4,18 +4,8 @@ services:
   image: hdh:latest
   restart: always
   ports:
-    - 3000:3000
-  depends_on: 
-   - hdh_mariadb
+    - 3000:9292
   volumes: 
-   - /home/jeremy/projects/JSW/hdh/rails:/app/hdh
+   - /home/jeremy/projects/JSW/hundreddollarhamburger/rails:/app/hdh
   environment:
    - RAILS_ENV=development
-
- hdh_mariadb:
-  image: mariadb
-  restart: always
-  environment:
-   MYSQL_ROOT_PASSWORD: hundred
-  volumes:
-    - /home/jeremy/projects/JSW/hdh/mysql_data:/var/lib/mysql

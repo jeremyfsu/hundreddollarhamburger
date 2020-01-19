@@ -2,9 +2,9 @@
 bundle check --path vendor/bundle
 if [ $? -eq 0 ]
 then
-  bin/pumactl -F config/puma.rb start
+  bin/pumactl start
 else
   bundle config build.nokogiri --use-system-libraries
   bundle install --path vendor/bundle --binstubs
-  bin/pumactl -F config/puma.rb start
+  bin/pumactl start
 fi
