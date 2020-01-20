@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200119220141) do
+ActiveRecord::Schema.define(version: 20200120023037) do
 
   create_table "folders", force: :cascade do |t|
     t.string   "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20200119220141) do
     t.string   "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean  "on_field"
   end
 
   create_table "permissions", force: :cascade do |t|

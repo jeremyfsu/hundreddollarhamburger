@@ -53,6 +53,6 @@ class HamburgersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def hamburger_params
-      params.require(:hamburger).permit(:airport_id, :name, :notes, :website)
+      params.require(:hamburger).permit(:airport_id, :name, :notes, :website, :on_field)
     end
 end

@@ -11,14 +11,19 @@
 </p>
 
 <p>
+  <strong>Restuarant On Field?:</strong>
+  <%= @hamburger.on_field ? "YES" : "NO" %>
+</p>
+
+<p>
   <strong>Notes:</strong>
   <%= @hamburger.notes %>
 </p>
 
 <p>
   <strong>Website:</strong>
-  <%= @hamburger.website %>
+  <%= link_to @hamburger.website, @hamburger.website %>
 </p>
 
 <%= link_to 'Edit', edit_hamburger_path(@hamburger) %> |
-<%= link_to 'Back', hamburgers_path %>
+<%= link_to 'Delete', @hamburger, method: :delete, data: { confirm: 'Are you sure?' } %> 

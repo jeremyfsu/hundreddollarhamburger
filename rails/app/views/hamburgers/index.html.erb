@@ -1,15 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Hamburgers</h1>
+<h1>$100 Hamburger List</h1>
 
 <table>
   <thead>
     <tr>
       <th>Airport</th>
       <th>Name</th>
-      <th>Notes</th>
-      <th>Website</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -17,12 +14,10 @@
     <% @hamburgers.each do |hamburger| %>
       <tr>
         <td><%= hamburger.airport_id %></td>
-        <td><%= hamburger.name %></td>
-        <td><%= hamburger.notes %></td>
-        <td><%= hamburger.website %></td>
-        <td><%= link_to 'Show', hamburger %></td>
+        <td><%= link_to hamburger.name, hamburger %></td>
+        <!--td><%= link_to 'Show', hamburger %></td>
         <td><%= link_to 'Edit', edit_hamburger_path(hamburger) %></td>
-        <td><%= link_to 'Destroy', hamburger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', hamburger, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Hamburger', new_hamburger_path %>
+<%= link_to 'Add new $100 hamburger', new_hamburger_path %>
