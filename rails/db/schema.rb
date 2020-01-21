@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200120023037) do
+ActiveRecord::Schema.define(version: 20200121194617) do
+
+  create_table "airports", force: :cascade do |t|
+    t.string   "airport_id"
+    t.string   "name"
+    t.string   "city"
+    t.string   "state"
+    t.decimal  "lat"
+    t.decimal  "lon"
+    t.decimal  "elev"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "airports", ["airport_id"], name: "index_airports_on_airport_id", unique: true
 
   create_table "folders", force: :cascade do |t|
     t.string   "name"

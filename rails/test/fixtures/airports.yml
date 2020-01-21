@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  airport_id: MyString
+  name: MyString
+  city: MyString
+  state: MyString
+  lat: 9.99
+  lon: 9.99
+  elev: 9.99
+
+two:
+  airport_id: MyString
+  name: MyString
+  city: MyString
+  state: MyString
+  lat: 9.99
+  lon: 9.99
+  elev: 9.99

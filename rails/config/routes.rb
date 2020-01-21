@@ -1,4 +1,6 @@
 Boxroom::Application.routes.draw do
+  resources :airports
+  resources :airports
   resources :hamburgers
   resources :hamburgers
   get '/file_exists', :to => 'files#exists'
