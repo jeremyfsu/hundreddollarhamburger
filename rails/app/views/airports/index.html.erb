@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Airport</th>
+      <th>Airport ID</th>
       <th>Name</th>
       <th>City</th>
       <th>State</th>
@@ -19,16 +19,13 @@
   <tbody>
     <% @airports.each do |airport| %>
       <tr>
-        <td><%= airport.airport_id %></td>
+        <td><%= link_to airport.location_id, airport %></td>
         <td><%= airport.name %></td>
         <td><%= airport.city %></td>
         <td><%= airport.state %></td>
         <td><%= airport.lat %></td>
         <td><%= airport.lon %></td>
         <td><%= airport.elev %></td>
-        <td><%= link_to 'Show', airport %></td>
-        <td><%= link_to 'Edit', edit_airport_path(airport) %></td>
-        <td><%= link_to 'Destroy', airport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

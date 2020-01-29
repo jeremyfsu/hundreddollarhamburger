@@ -1,5 +1,6 @@
 class AirportsController < ApplicationController
   before_action :set_airport, only: [:show, :edit, :update, :destroy]
+  autocomplete :airport, :id_and_name, :full => true
 
   # GET /airports
   def index
@@ -8,6 +9,7 @@ class AirportsController < ApplicationController
 
   # GET /airports/1
   def show
+    @hamburgers = @airport.hamburgers
   end
 
   # GET /airports/new
@@ -53,6 +55,6 @@ class AirportsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def airport_params
-      params.require(:airport).permit(:airport_id, :name, :city, :state, :lat, :lon, :elev)
+      params.require(:airport).permit(:location_id, :name, :city, :state, :lat, :lon, :elev)
     end
 end

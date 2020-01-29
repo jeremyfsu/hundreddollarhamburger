@@ -1,7 +1,8 @@
 Boxroom::Application.routes.draw do
-  resources :airports
-  resources :airports
-  resources :hamburgers
+  resources :airports do
+    get :autocomplete_airport_id_and_name, :on => :collection
+  end
+
   resources :hamburgers
   get '/file_exists', :to => 'files#exists'
   get '/signin', :to => 'sessions#new', :as => 'signin'

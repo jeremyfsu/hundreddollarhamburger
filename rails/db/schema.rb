@@ -11,21 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200121194617) do
+ActiveRecord::Schema.define(version: 20200123203537) do
 
   create_table "airports", force: :cascade do |t|
-    t.string   "airport_id"
+    t.string   "location_id"
     t.string   "name"
     t.string   "city"
     t.string   "state"
     t.decimal  "lat"
     t.decimal  "lon"
     t.decimal  "elev"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "id_and_name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "airports", ["airport_id"], name: "index_airports_on_airport_id", unique: true
+  add_index "airports", ["id_and_name"], name: "index_airports_on_id_and_name", unique: true
+  add_index "airports", ["location_id"], name: "index_airports_on_location_id", unique: true
 
   create_table "folders", force: :cascade do |t|
     t.string   "name"
@@ -46,7 +48,7 @@ ActiveRecord::Schema.define(version: 20200121194617) do
   end
 
   create_table "hamburgers", force: :cascade do |t|
-    t.string   "airport_id"
+    t.integer  "airport_id"
     t.string   "name"
     t.text     "notes"
     t.string   "website"

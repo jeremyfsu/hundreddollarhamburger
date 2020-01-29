@@ -2,7 +2,7 @@
 
 <p>
   <strong>Airport:</strong>
-  <%= @airport.airport_id %>
+  <%= @airport.location_id %>
 </p>
 
 <p>
@@ -21,19 +21,15 @@
 </p>
 
 <p>
-  <strong>Lat:</strong>
-  <%= @airport.lat %>
-</p>
-
-<p>
-  <strong>Lon:</strong>
-  <%= @airport.lon %>
+  <strong>From JVY:</strong>
+  <%= number_with_precision(@airport.vector_from_jvy[:distance],precision: 1) %>nm 
+  <%= number_with_precision(@airport.vector_from_jvy[:bearing], precision: 0) %>&deg;
 </p>
 
 <p>
   <strong>Elev:</strong>
   <%= @airport.elev %>
 </p>
-
-<%= link_to 'Edit', edit_airport_path(@airport) %> |
+<h1>Hamburgers at this airport:</h1>
+<%= render 'hamburgers/index' %>
 <%= link_to 'Back', airports_path %>

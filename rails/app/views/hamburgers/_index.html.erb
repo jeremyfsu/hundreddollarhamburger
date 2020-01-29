@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Airport</th>
+      <th>Restaurant Name</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hamburgers.each do |hamburger| %>
+      <tr>
+        <td><%= link_to hamburger.airport.location_id, hamburger.airport %></td>
+        <td><%= link_to hamburger.name, hamburger %></td>
+        <td><%= hamburger.notes%></td>
+        <!--td><%= link_to 'Show', hamburger %></td>
+        <td><%= link_to 'Edit', edit_hamburger_path(hamburger) %></td>
+        <td><%= link_to 'Destroy', hamburger, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>

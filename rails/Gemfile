@@ -25,3 +25,7 @@ group :test do
 end
 
 gem 'puma'
+gem 'kaminari'
+gem 'jquery-ui-rails'
+gem 'rails4-autocomplete'
+gem 'geokit'

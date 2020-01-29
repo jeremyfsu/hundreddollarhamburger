@@ -2,7 +2,7 @@
 
 <p>
   <strong>Airport:</strong>
-  <%= @hamburger.airport_id %>
+  <%= @hamburger.airport.id_and_name %>
 </p>
 
 <p>
@@ -11,8 +11,13 @@
 </p>
 
 <p>
-  <strong>Restuarant On Field?:</strong>
+  <strong>Restaurant On Field?:</strong>
   <%= @hamburger.on_field ? "YES" : "NO" %>
+</p>
+<p>
+<strong>From JVY:</strong>
+  <%= number_with_precision(@hamburger.airport.vector_from_jvy[:distance],precision: 1) %>nm 
+  <%= number_with_precision(@hamburger.airport.vector_from_jvy[:bearing], precision: 0) %>&deg; 
 </p>
 
 <p>

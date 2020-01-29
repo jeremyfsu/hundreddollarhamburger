@@ -1,10 +1,3 @@
 #!/bin/bash
-bundle check --path vendor/bundle
-if [ $? -eq 0 ]
-then
-  bin/pumactl start
-else
-  bundle config build.nokogiri --use-system-libraries
-  bundle install --path vendor/bundle --binstubs
-  bin/pumactl start
-fi
+aws s3 cp s3://thoroughbredflyingclub/data/production.sqlite3 db/
+bin/pumactl -F config/puma.rb start

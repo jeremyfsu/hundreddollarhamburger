@@ -1,20 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <h1>$100 Hamburger List</h1>
-
+<br>
 <table>
   <thead>
     <tr>
       <th>Airport</th>
-      <th>Name</th>
+      <th>Restaurant Name</th>
+      <th>From JVY</th>
+      <th>Notes</th>
     </tr>
   </thead>
 
   <tbody>
     <% @hamburgers.each do |hamburger| %>
       <tr>
-        <td><%= hamburger.airport_id %></td>
+        <td><%= link_to hamburger.airport.id_and_name, hamburger.airport %></td>
         <td><%= link_to hamburger.name, hamburger %></td>
+        <td>
+          <%= number_with_precision(hamburger.airport.vector_from_jvy[:distance],precision: 1) %>nm 
+          <%= number_with_precision(hamburger.airport.vector_from_jvy[:bearing], precision: 0) %>&deg; 
+        </td>
+        <td><%= hamburger.notes%></td>
         <!--td><%= link_to 'Show', hamburger %></td>
         <td><%= link_to 'Edit', edit_hamburger_path(hamburger) %></td>
         <td><%= link_to 'Destroy', hamburger, method: :delete, data: { confirm: 'Are you sure?' } %></td-->
@@ -22,7 +29,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
 <%= link_to 'Add new $100 hamburger', new_hamburger_path %>
